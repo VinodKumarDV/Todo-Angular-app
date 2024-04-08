@@ -1,0 +1,25 @@
+  <div class="flex mt-10 flex-1 justify-center items-center flex-col">
+    <p class="font-semibold text-3xl mb-2 underline">Todo List</p>
+    <table>
+      <thead>
+        <tr class="header">
+          <th>Task title</th>
+          <th>Description</th>
+          <th>Task Statue</th>
+          <th>Edit Task</th>
+          <th>delete Task</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let task of tasks">
+          <td>{{ task.title }}</td>
+          <td>{{ task.description }}</td>
+          <td><input type="checkbox" id={{task.id}} class="m-2 li-class" [(ngModel)]="task.completed"></td>
+          <td><button type="submit" fun="edit" (click)="editTask(task.id)">Edit</button></td>
+          <td><button fun="delet" type="submit" (click)="deleteTask(task.id)">Delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+    <p type="addTask" *ngIf="!tasks || tasks.length === 0" routerLink="/add">No tasks found. Click here to Add a new task.</p>
+    <p type="addTask" *ngIf="!tasks || tasks.length > 0" routerLink="/add">Add Task</p>
+  </div>
