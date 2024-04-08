@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* globle stylling */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  button[type="submit"] {
+    background-color: #3b3b3b;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 4px 12px;
+    border-radius: 3px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin-left: 15px;
+  }
+  
+  /* task-list.component.css */
+  table, th , td  {
+    border: 1px solid grey;
+    border-collapse: collapse;
+    padding: 0.5rem;
+    text-align: center;
+  }
+
+  th {
+    background-color: #f7f469;
+  }
+
+  table tr:nth-child(odd) {
+    background-color: #f1f1f1;
+  }
+
+  table tr:nth-child(even) {
+    background-color: #ffffff;
+  }
+
+  p[type="addTask"]:hover {
+    background-color: #ffa500;
+    color: #000000;
+    cursor: pointer;
+  }
+
+  p[type="addTask"] {
+    background-color:#3b3b3b;
+    color: white;
+    margin-top: 1rem;
+    padding: 0.25rem 1rem;
+    width: fit-content;
+    text-align: center;
+    border-radius: 0.35rem;
+  }
+
+  /* task-form.component.css */
+  form {
+    margin-top: 20px;
+    width: fit-content;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input[type="text"],
+  textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-color: black;
+    color: #000000;
+    border-width: 1px;
+  }
+
+  button[fun="home"] {
+    background-color: #3b3b3b;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 4px 12px;
+    border-radius: 3px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin-left: 100px;
+  }
+  
+  button[fun="delet"]:hover {
+    background-color: #FF0000;
+    /* color: #000000; */
+  }
+
+  button[fun="edit"]:hover {
+    background-color: #ffa500;
+    color: #000000;
+  }
+
+  button[fun="save"]:hover {
+    background-color: #00FF00;
+    color: #000000;
+  }
+
+  
