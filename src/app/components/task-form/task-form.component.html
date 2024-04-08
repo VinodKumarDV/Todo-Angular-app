@@ -1,0 +1,24 @@
+<div class="flex flex-1 justify-center items-center flex-col">
+  <div class="max-w-fit mt-10 bg-slate-100 p-4 border-yellow-900 border-2 rounded-md box-border justify-between">
+    <p class="font-semibold text-center text-3xl mb-2 underline" *ngIf="!routeName || (routeName === '/add')">Add Task</p>
+    <p class="font-semibold text-center text-3xl mb-2 underline" *ngIf="!routeName || (routeName !== '/add')">Edit Task</p>
+    <form #taskForm="ngForm" (ngSubmit)="saveTask()">
+      <label for="title">Title:</label>
+      <input type="text" id="title" name="title" [required]="true" minlength="4" [(ngModel)]="task['title']">      
+      <div *ngIf="taskForm.controls['title'].invalid && (taskForm.controls['title'].dirty || taskForm.controls['title'].touched)">
+        <p *ngIf="taskForm.controls['title'].errors?.['required']">Title is required</p>
+        <p *ngIf="taskForm.controls['title'].errors?.['minlength']">Title must be at least 4 characters long</p>
+      </div>
+      <label for="description">Description:</label>
+        <textarea name="description" id="description" [required]="true" minlength="10" [(ngModel)]="task['description']"></textarea>
+      <div *ngIf="taskForm.controls['description'].invalid && (taskForm.controls['description'].dirty || taskForm.controls['description'].touched)">
+        <p *ngIf="taskForm.controls['description'].errors?.['required']">Description is required</p>
+        <p *ngIf="taskForm.controls['description'].errors?.['minlength']">Description must be at least 10 characters long</p>
+      </div>
+      <label for="checkbox">Completed:</label>
+        <input type="checkbox" id="checkbox" name="completed" [(ngModel)]="task['completed']">
+      <button fun="save" type="submit">Save</button>
+      <button fun="home" type="home" *ngIf="!routeName || (routeName === '/add')" routerLink="/">Home</button>
+    </form>
+  </div>
+</div>
